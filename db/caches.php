@@ -32,5 +32,10 @@ $definitions = array(
     'sessions' => array(
         'mode' => cache_store::MODE_APPLICATION,
         'ttl' => 300
+    ),
+
+    'users' => array(
+        'mode' => cache_store::MODE_APPLICATION,
+        'ttl' => 43200
     )
 );

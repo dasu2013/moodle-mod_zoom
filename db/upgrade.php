@@ -43,6 +43,10 @@ function xmldb_zoom_upgrade($oldversion) {
     $dbman = $DB->get_manager(); // Loads ddl manager and xmldb classes.
     $table = new xmldb_table('zoom');
 
+    if ($oldversion < 2018190200) {
+        set_config('apiurl', 'https://api.zoom.us/v2/', 'mod_zoom');
+    }
+
     if ($oldversion < 2015071000) {
         // Add updated_at.
         $field = new xmldb_field('updated_at', XMLDB_TYPE_CHAR, '20', null, null, null, null, 'created_at');
